@@ -8,17 +8,18 @@ const images = [
 var nextBtn = document.getElementById('nextPhoto');
 var prevBtn = document.getElementById('prevPhoto');
 var img = document.getElementById('currentPhoto');
+const imgAmount = images.length;
 var counter = 0;
 
 function next() {
     counter++;
-    counter = counter < 5 ? counter : 0;
+    counter = counter < imgAmount ? counter : 0;
     img.src = images[counter];
 }
 
 function prev() {
     counter--;
-    counter = counter >= 0 ? counter : 4;
+    counter = counter >= 0 ? counter : imgAmount-1;
     img.src = images[counter];
 }
 

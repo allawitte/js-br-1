@@ -6,15 +6,16 @@ const images = [
     './i/airmax-playground.png',
     './i/airmax-top-view.png'
 ];
+const imgAmount = images.length;
 var img = document.getElementById('currentPhoto');
-let counter = 0;
+img.src = images[0];
+let counter = 1;
 
 setInterval(function(){
     img.src = images[counter];
     img.alt = images[counter].match(/[a-z-{*}]+\./)[0].replace('.','');
     counter ++;
-    counter = counter < 5 ? counter : 0;
-    console.log(counter, img.alt);
+    counter = counter < imgAmount ? counter : 0;
 }, 5000);
 
 /**
